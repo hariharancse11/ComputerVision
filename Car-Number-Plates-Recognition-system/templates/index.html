@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Plate Recognition System</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Adjustments to center the video feed */
+        body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                      url("{{ url_for('static', filename='cars.jpg') }}");
+    background-size: cover;
+    background-position: center;
+    color:white;
+}
+
+        .video-container {
+            border: 0px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <h3 class="mt-3 mb-4">Number Plate Recognition System</h3>
+        <div class="video-container">
+            <img src="{{ url_for('video_feed') }}" class="img-fluid" style="width:640px; height:440px;" />
+        </div>
+        <a href="/view_data"><button>View Data</button></a>
+    </div>
+
+    <!-- Bootstrap JS and jQuery CDN (required for Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

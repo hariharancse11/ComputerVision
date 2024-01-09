@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video Frame Capture</title>
+</head>
+<body>
+  <video id="videoElement" width="640" height="480" autoplay></video>
+  <canvas id="canvas" width="640" height="480"></canvas>
+
+  <script>
+    const video = document.getElementById('videoElement');
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    // Get access to the camera
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then(function(stream) {
+          // Set the video source and start playing
+          video.srcObject = stream;
+          video.play();
+        })
+        .catch(function(err) {
+          console.error('Access to camera was denied!', err);
+        });
+    }
+
+    // Capture frames and display on canvas
+    video.addEventListener('play', function() {
+      const frameInterval = 1000 / 30; // 30 frames per second
+      setInterval(function() {
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+      }, frameInterval);
+    });
+  </script>
+</body>
+</html>
