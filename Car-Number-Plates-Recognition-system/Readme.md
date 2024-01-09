@@ -2,6 +2,7 @@
 
 ## Detection:
 <img width="798" alt="Screenshot 2024-01-09 104108" src="https://github.com/hariharancse11/ComputerVision/assets/33338812/d5482585-1946-4807-a760-d6ff66e9fd42">
+
 ## Recognized Text:
 <img width="899" alt="Screenshot 2024-01-09 104507" src="https://github.com/hariharancse11/ComputerVision/assets/33338812/acc97be8-e587-40d0-91a8-15d56d36dfaa">
 Overview
